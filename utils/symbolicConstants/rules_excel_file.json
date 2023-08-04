@@ -1,0 +1,18 @@
+{
+    "LIKE_RELATIONSHIP_LABEL": "like",
+    "DISLIKE_RELATIONSHIP_LABEL": "dislike",
+
+	"ALL_SHEET_NAME": "all",
+    "LIKES_ONLY_SHEET_NAME": "likes_only",
+    "OVER_INFIX_SHEET_NAME": "over",
+    "SEPARATOR_SHEET_NAME": "_",
+
+    "RULE_COLUMN_LABEL": "Rule",
+    "HEAD_COVERAGE_COLUMN_LABEL": "Head Coverage",
+    "PCA_CONFIDENCE_COLUMN_LABEL": "PCA Confidence",
+    "STD_CONFIDENCE_COLUMN_LABEL": "Std Confidence",
+    "POSITIVE_EXAMPLES_COLUMN_LABEL": "Positive Examples",
+    "BODY_SIZE_COLUMN_LABEL": "Body size",
+    "PCA_BODY_SIZE_COLUMN_LABEL": "PCA Body size",
+    "FUNCTIONAL_VARIABLE_COLUMN_LABEL": "Functional variable"
+}

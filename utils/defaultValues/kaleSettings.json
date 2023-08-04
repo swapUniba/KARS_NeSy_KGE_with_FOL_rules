@@ -1,0 +1,9 @@
+{
+    "miniBatch": 100,
+    "m_d": 0.1,
+    "m_gE": 0.05,
+    "m_gR": 0.05,
+    "iterations": 500,
+    "skip": 50,
+    "weight": 0.01
+}

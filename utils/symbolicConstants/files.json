@@ -1,0 +1,56 @@
+{
+    "KALE_TRAIN": "kale_train.tsv",
+    "KALE_VALID": "kale_valid.tsv",
+    "KALE_TEST": "kale_test.tsv",
+
+    "AMAR_TRAIN": "amar_train.tsv",
+    "AMAR_TEST": "amar_test.tsv",
+
+    "MAP_DATASET_MATRIX": "_map-dataset-matrix.txt",
+    "ENTITY_ID": "entityid.txt",
+    "ENTITY_MATRIX": "MatrixE.best",
+    "RELATION_MATRIX": "MatrixR.best",
+    "KALE_LOGS": "KALE_logs.txt",
+    "TRAIN_USER_ITEM": "train_user-item.tsv",
+    "TEST_USER_ITEM": "test_user-item.tsv",
+
+    "MAPPING_PROPS": "mapping_props.tsv",
+    "MAPPING_USERS": "mapping_users.tsv",
+    "MAPPING_ITEMS": "mapping_items.tsv",
+    "MAPPING_RELATIONS": "mapping_relations.tsv",
+
+    "AMIE_INIT": "amie-init.jar",
+    "AMIE_OUTPUT": "AMIE_output.txt",
+
+    "RULES_RULES": "rules.rules",
+
+    "RULES_EXCEL": "rules.ods",
+
+    "GROUNDINGS": "groundings.txt",
+
+    "RELATION_ID": "relationid.txt",
+    "TRAIN": "train.txt",
+    "VALID": "valid.txt",
+    "TEST": "test.txt",
+
+    "GROUND_ALL_RULES": "GroundAllRules.jar",
+    "CONVERT_DATA_FORM": "ConvertDataForm.jar",
+    "KALE_JOINT_PROGRAM": "KALEJointProgram.jar",
+    "KALE_TRIP_PROGRAM": "KALETripProgram.jar",
+
+    "MODEL": "model.h5",
+
+    "PREDICTIONS_1": "predictions_1.tsv",
+
+    "ELLIOT_SETTINGS": "settings.yml",
+
+    "RULES_FILTER": "rulesFilter.json",
+    "KALE_SETTINGS": "kaleSettings.json",
+    "AMIE_SETTINGS": "amieSettings.json",
+    "AMAR_SETTINGS": "amarSettings.json",
+    "ELLIOT_ARG_SETTINGS": "elliotSettings.json",
+
+    "AMAR_TEST_LIKE_ONLY": "amar_test_like_only.tsv",
+
+    "AMAR_ALL_ITEMS": "amar_all_items.tsv"
+}

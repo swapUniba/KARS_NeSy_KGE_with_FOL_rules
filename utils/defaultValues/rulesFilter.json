@@ -1,0 +1,8 @@
+{
+    "minStdConfidence": 0,
+    "minHeadCoverage": 0,
+    "minPositiveExamples": 0,
+    "minPcaConfidence": 0,
+    "minBodySize": 0,
+    "minPcaBodySize": 0
+}

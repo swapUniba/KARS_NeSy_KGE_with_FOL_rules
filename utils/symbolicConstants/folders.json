@@ -1,0 +1,22 @@
+{
+    "DATASETS": "datasets",
+    "USER_ITEM_PROP": "user-item-prop",
+    "USER_ITEM": "user-item",
+    "WITH_RULES": "with_rules",
+    "NO_RULES": "no_rules",
+    "MAX_AD_PREFIX": "maxad_",
+    "EMBEDDINGS": "embeddings",
+    "JARS": "jars",
+    "RESULTS": "results",
+    "PREDICTIONS": "predictions",
+    "ELLIOT": "elliot",
+    "ELLIOT_OUTPUT": "output",
+    "ELLIOT_RESULTS": "results",
+    "WITH_PROPS": "with_props",
+    "NO_PROPS": "no_props",
+	"DIM_PREFIX": "dim",
+	"TOP_PREFIX": "top",
+    "DEFAULT_VALUES": "defaultValues",
+    "KALE_CONFIGURATION_INFIX": "-",
+    "COMPARISONS": "comparisons"
+}
