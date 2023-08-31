@@ -1,0 +1,13 @@
+dislike	0
+like	1
+http://dbpedia.org/ontology/starring	2
+http://dbpedia.org/ontology/producer	3
+http://dbpedia.org/ontology/language	4
+http://dbpedia.org/ontology/editing	5
+http://dbpedia.org/ontology/country	6
+http://dbpedia.org/ontology/musicComposer	7
+http://dbpedia.org/ontology/basedOn	8
+http://purl.org/dc/terms/subject	9
+http://dbpedia.org/ontology/cinematography	10
+http://dbpedia.org/ontology/writer	11
+http://dbpedia.org/ontology/director	12
