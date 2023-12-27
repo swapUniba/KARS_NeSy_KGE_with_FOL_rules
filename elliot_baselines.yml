@@ -17,7 +17,6 @@ experiment:
   top_k: 20
   models:
 
-    # 8 = 2x2x2
     ItemKNN:
       meta:
         save_recs: True
@@ -25,7 +24,6 @@ experiment:
       similarity: ['cosine', 'dot']
       implementation: ['classical', 'euclidean']
 
-    # 8 = 2x2x2
     UserKNN:
       meta:
         save_recs: True
@@ -33,7 +31,6 @@ experiment:
       similarity: ['cosine', 'dot']
       implementation: ['classical', 'euclidean']
 
-    # 8 = 2x2x2
     AttributeItemKNN:
       meta:
         save_recs: True
@@ -41,7 +38,6 @@ experiment:
       neighbors: [500, 1000]
       similarity: ['cosine', 'dot']
 
-    # 8 = 2x2x2
     AttributeUserKNN:
       meta:
         save_recs: True
@@ -50,7 +46,6 @@ experiment:
       similarity: ['cosine', 'dot']
       profile: binary
       
-    # 18 = 3x3x2
     MultiVAE:
       meta:
         save_recs: True
@@ -62,7 +57,6 @@ experiment:
       lr: 0.01
       dropout_pkeep: 1
 
-    # 12 = 3x2x2
     CFGAN:
       meta:
         save_recs: True
@@ -78,7 +72,6 @@ experiment:
       s_zr: 0.001
       s_pm: 0.001
 
-    # 12 = 3x2x2
     NGCF:
       meta:
         save_recs: True
@@ -92,7 +85,6 @@ experiment:
       message_dropout: (0.1,0.2,0.3)
       n_fold: 5
 
-    # 16 = 2x2x2x2
     KaHFM:
       meta:
         validation_rate: 1
@@ -108,7 +100,6 @@ experiment:
       positive_item_regularization: [0.005, 0.01]
       negative_item_regularization: [0.005, 0.01]
 
-    # 8 = 2x2x2
     NeuMF:
       meta:
         save_recs: True
@@ -122,7 +113,6 @@ experiment:
       is_mf_train: True
       is_mlp_train: True
 
-    # 48 = 3x2x2x2x2
     BPRMF:
       meta:
         save_recs: True
@@ -138,14 +128,12 @@ experiment:
       update_items: True
       update_bias: True
 
-    # 5
     PureSVD:
       meta:
         save_recs: True
       factors: [10, 20, 30, 40, 50]
       seed: 42
     
-    # 2x3 = 6
     LightGCN:
       meta:
         save_recs: True
@@ -157,7 +145,6 @@ experiment:
       n_layers: [1, 2, 3]
       n_fold: [2, 5]
       
-    # 1
     VSM:
       meta:
         save_recs: True
@@ -166,12 +153,8 @@ experiment:
       user_profile: binary
       item_profile: binary
 
-    # 4 = 2x2
     Slim:
       meta:
         save_recs: True
       l1_ratio: [0.005, 0.01]
       alpha: [0.005, 0.01]
-    
-
-    
