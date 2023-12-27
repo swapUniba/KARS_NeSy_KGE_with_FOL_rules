@@ -1,0 +1,16 @@
+experiment:
+  gpu: 1
+  path_output_rec_performance: external_results/multimedia/{}/
+  dataset: movielens   # 'dbbook' or 'lastfm'
+  data_config:
+    strategy: fixed
+    train_path: ../data/{}/amar_train.tsv
+    test_path: ../data/{}/amar_test.tsv    # contains only 1s
+  evaluation:
+    simple_metrics: [MAP, Precision, MAR, Recall, F1, nDCG, Gini, ItemCoverage, EFD, EPC]
+    paired_ttest: True
+    wilcoxon_test: True
+  models:
+    RecommendationFolder:
+      folder: predictions/kge_fol_rules/movielens/
+  top_k: 5
