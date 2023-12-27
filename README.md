@@ -67,5 +67,5 @@ python3 runAmar.py -h
 
 Finally, the evaluation of the just generated prediction list can be performed with any evaluation tool; in our experiments, we used [Elliot](https://elliot.readthedocs.io/en/latest/): with Elliot it is possible to provide one (or more) recommendation list (as a ProxyRecommender model, or RecommendationFolder model) that are evaluated by using the `test.tsv` file provided. An example of the configuration file we used is provided in this repository, named `elliot_evaluation.yml`.
 
-
+## Credits
 Thanks to the student Gianmarco Turchiano for his technical support.
