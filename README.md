@@ -16,13 +16,12 @@ The overall pipeline can be split into three main steps:
 In the following, we will describe how each of these steps can be performed by using our source code, and where the input and output data are stored.
 First, we will describe the structure of each dataset.
 
-#### Dataset structure
+### Dataset structure
 Dataset can be found in two versions: `user-item` and `user-item-prop`. The main difference is that in the former we only encode user-item interactions (likes and dislikes), while in the latter we also encode KG triples related to the items in the dataset. We also provided the two mappings: `mapping_items.tsv` and `mapping_relations.tsv` that just map the IDs of items and relations to corresponding strings.
 Within each folder (`user-item` or `user-item-prop`) we included the files necessary to mine the FOL rules, learn the KGE and train the recommendation models: `entityid.txt` and `relationid.txt` map our entities and relations with contiguos ids, that are necessary to learn the KGE; the files `train.txt`, `valid.txt` and `test.txt` and remapped versions of the files `kale_train.txt`, `kale_valid.txt` and `kale_test.txt`, since the models we explit (AMIE and KALE) need their own continguous mappings; finally, `amar_train.tsv` and `amar_test.tsv` are the files used to train and test the recommender system.
 
-``
 
-#### 1. FOL mining
+### 1. FOL mining
 The first step is the mining of the rules form a dataset - let us take `dbbook` as an example. 
 Given the `dbbook` dataset split as described in the previous section, and supposing we want to mine rules of lenght 3 (that is, 2 atoms in the body and 1 atom in the head), we need to run the command:
 ```sh
@@ -39,7 +38,7 @@ and check all the other possible parameters.
 
 
 
-#### 2. KGE learning
+### 2. KGE learning
 Now we want to learn the KGE for `dbbook` by using the rules mined during the previous step, and we want the embeddings of dimension `10` (all the other parameters, such as the number of epochs of the learning step, are left as default values). All we need to do is running the following command:
 ```sh
 python3 runKale.py --maxad=3 --dims=10 --itemProperties dbbook
@@ -52,7 +51,7 @@ python3 runKale.py -h
 ```
 and check all the other possible parameters.
 
-#### 3. Train recommendation model
+### 3. Train the recommendation model and evaluate
 
 Finally, in order to train the recommendation model by using the KGE learned during the previous step, all we need to do is running the following command:
 
