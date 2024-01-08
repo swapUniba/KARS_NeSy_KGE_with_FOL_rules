@@ -34,8 +34,14 @@ To investigate further parameters of the rule mining process, you can run
 python3 mineAndGroundRules.py -h
 ```
 and check all the other possible parameters.
-
-
+In the following table we list some of these parameters:
+|Parameter | Description|
+| ------ | ------ |
+|MAX_AD_FLAG | maximum number of atoms per rule|
+|MIN_STD_CONFIDENCE_FLAG |minimum standard confidence per rule|
+|MIN_POSITIVE_EXAMPLES_FLAG |minimum amount of positive examples per rule|
+|MIN_PCA_CONFIDENCE_FLAG |minimum PCA confidence per rule|
+|LIKE_ONLY_FLAG |weather to consider only those rules which head includes a like relationship|
 
 
 ### 2. KGE learning
