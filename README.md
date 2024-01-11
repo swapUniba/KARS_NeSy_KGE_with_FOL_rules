@@ -27,7 +27,7 @@ Given the `dbbook` dataset split as described in the previous section, and suppo
 ```sh
 python3 mineAndGroundRules.py --maxad=3 dbbook
 ```
-At the end of the process, ypu will find the folder `with_rules\maxad_3\` in the dataset folder, which will contain all the mined rules and the related groudings (instances of the rules, `with_rules\maxad_3\all\groundings.txt`) in several format, including a easy-to-read `.odf` file that will also contain, for each rule, the value of each metrics (e.g., PCA confidence or number of positive examples).
+At the end of the process, you will find the folder `with_rules\maxad_3\` in the dataset folder, which will contain all the mined rules and the related groudings (instances of the rules, `with_rules\maxad_3\all\groundings.txt`) in several format, including a easy-to-read `.odf` file that will also contain, for each rule, the value of each metrics (e.g., PCA confidence or number of positive examples).
 
 To investigate further parameters of the rule mining process, you can run
 ```sh
