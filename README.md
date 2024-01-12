@@ -64,7 +64,7 @@ Finally, in order to train the recommendation model by using the KGE learned dur
 ```sh
 python3 runAmar.py --maxad=3 --dims=10 --itemProperties dbbook
 ```
-This script will train the recommendation model by using the selected KGE and will produce two recommendation lists (`top5` and `top10`) that will be stored in the folder `with_rules\maxad_3\...\dim10\predictions\`; moreover, the folder `with_rules\maxad_3\...\dim10\predictions\` will contain the `.h5` trained model.
+This script will train the recommendation model by using the selected KGE and will produce two recommendation lists (`top5` and `top10`) that will be stored in the folder `with_rules\maxad_3\...\dim10\predictions\` as `.tsv` files; moreover, the folder `with_rules\maxad_3\...\dim10\predictions\` will contain the `.h5` trained model.
 
 More parameters for the training can be set, and they can be visualized by running the command
 ```sh
@@ -73,11 +73,14 @@ python3 runAmar.py -h
 
 Finally, the evaluation of the just generated prediction list can be performed with any evaluation tool; in our experiments, we used [Elliot](https://elliot.readthedocs.io/en/latest/): with Elliot it is possible to provide one (or more) recommendation list (as a ProxyRecommender model, or RecommendationFolder model) that are evaluated by using the `test.tsv` file provided. An example of the configuration file we used is provided in this repository, named `elliot_evaluation.yml`.
 
-Move `elliot_evaluation.yml` and  file in the `config_file/` folder of Elliot, and then run the file
+In order to evaluate the recommendation list, you need to install Elliot and its depencendes; then, move the content of the `data` folder of this repository into the `data` folder of Elliot; in this way, each dataset will be loadable by Elliot. Then, move `elliot_evaluation.yml` and file from this repo to the `config_file/` folder of Elliot. Finally, create a folder named `predictions/kge_fol_rules/<dataset>/` in the Elliot folder, and move the `.tsv` file generated at the previous step into this new folder (in the correct <dataset> folder, of course).
+In this way, Elliot will be able to evaluate the generated recommendation list by following the instruction reported in the configuration file, using the ground truth that can be found in the `data` folder.
+
+It is possible to start the evaluation of the prediction list by running the command:
 ```sh
 python3 start_experiments.py -config=elliot_evaluation
 ```
-to evaluate the predictions.
+
 
 ## Credits
 Thanks to the student Gianmarco Turchiano for his technical support.
