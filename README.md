@@ -80,7 +80,7 @@ It is possible to start the evaluation of the prediction list by running the com
 ```sh
 python3 start_experiments.py -config=elliot_evaluation
 ```
-
+The results of the evaluation will be stored in the `external_results/<dataset>/recs/` folder, including paired ttest or Wilcoxon test (that are set to `True` in our `elliot_evaluation.yml` file).
 
 ## Credits
 Thanks to the student Gianmarco Turchiano for his technical support.
