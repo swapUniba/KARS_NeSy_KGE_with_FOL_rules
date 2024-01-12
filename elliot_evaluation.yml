@@ -1,6 +1,6 @@
 experiment:
   gpu: 1
-  path_output_rec_performance: external_results/multimedia/{}/
+  path_output_rec_performance: external_results/{}/
   dataset: movielens   # 'dbbook' or 'lastfm'
   data_config:
     strategy: fixed
