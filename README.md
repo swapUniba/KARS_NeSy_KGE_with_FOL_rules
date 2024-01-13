@@ -20,6 +20,15 @@ First, we will describe the structure of each dataset.
 Dataset can be found in two versions: `user-item` and `user-item-prop`. The main difference is that in the former we only encode user-item interactions (likes and dislikes), while in the latter we also encode KG triples related to the items in the dataset. We also provided the two mappings: `mapping_items.tsv` and `mapping_relations.tsv` that just map the IDs of items and relations to corresponding strings.
 Within each folder (`user-item` or `user-item-prop`) we included the files necessary to mine the FOL rules, learn the KGE and train the recommendation models: `entityid.txt` and `relationid.txt` map our entities and relations with contiguos ids, that are necessary to learn the KGE; the files `train.txt`, `valid.txt` and `test.txt` and remapped versions of the files `kale_train.txt`, `kale_valid.txt` and `kale_test.txt`, since the models we explit (AMIE and KALE) need their own continguous mappings; finally, `amar_train.tsv` and `amar_test.tsv` are the files used to train and test the recommender system.
 
+### Results reproducibility
+
+In order to replicate our result, please find the generated prediction lists in the `predictions` folder.
+You can evaluate them by using the [Elliot](https://elliot.readthedocs.io/en/latest/) framework. To do so,you need to install Elliot and its depencendes; then, move the content of the `data` folder of this repository into the `data` folder of Elliot; in this way, each dataset will be loadable by Elliot. Then, move `elliot_evaluation.yml` and file from this repo to the `config_file/` folder of Elliot. Finally, create a folder named `predictions/kge_fol_rules/<dataset>/` in the Elliot folder, and move the `.tsv` files in the `predictions` folder into this new folder (in the correct <dataset> folder, of course).
+Then, you can evaluate them by running the command
+```sh
+python3 start_experiments.py -config=elliot_evaluation
+```
+The results of the evaluation will be stored in the `external_results/<dataset>/recs/` folder, including paired ttest or Wilcoxon test (that are set to `True` in our `elliot_evaluation.yml` file).
 
 ### 1. FOL mining
 The first step is the mining of the rules form a dataset - let us take `dbbook` as an example. 
