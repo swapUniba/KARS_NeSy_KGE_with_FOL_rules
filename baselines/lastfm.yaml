@@ -20,30 +20,30 @@ experiment:
     ItemKNN:
       meta:
         save_recs: True
-      neighbors: 100
-      similarity: dot
-      implementation: classical
+      neighbors: [50, 100, 150]
+      similarity: ['cosine, 'dot']
+      implementation: ['classical', 'euclidean']
 
     UserKNN:
       meta:
         save_recs: True
-      neighbors: 150
-      similarity: dot
-      implementation: euclidean
+      neighbors: [50, 100, 150]
+      similarity: ['cosine, 'dot']
+      implementation: ['classical', 'euclidean']
 
     AttributeItemKNN:
       meta:
         save_recs: True
       loader: ItemAttributes
-      neighbors: 150
-      similarity: cosine
+      neighbors: [50, 100, 150]
+      similarity: ['cosine, 'dot']
 
     AttributeUserKNN:
       meta:
         save_recs: True
       loader: ItemAttributes
-      neighbors: 150
-      similarity: cosine
+      neighbors: [50, 100, 150]
+      similarity: ['cosine, 'dot']
       profile: binary
       
     MultiVAE:
@@ -51,8 +51,7 @@ experiment:
         save_recs: True
       epochs: 10
       batch_size: 512
-      intermediate_dim: 600
-      latent_dim: 200
+      intermediate_dim: [16, 32, 64]
       reg_lambda: [0.01, 0.05]
       lr: 0.0001
       dropout_pkeep: 0.5
@@ -60,15 +59,15 @@ experiment:
     CFGAN:
       meta:
         save_recs: True
-      epochs: 10
+      epochs: 30
       batch_size: 1024
-      factors: 10
+      factors: [10, 20, 30]
       lr: 0.01
       l_w: 0.1
       l_b: 0.1
       l_gan: 0.1
-      g_epochs: 5
-      d_epochs: 1
+      g_epochs: [2, 5]
+      d_epochs: [2, 5]
       s_zr: 0.001
       s_pm: 0.001
 
@@ -78,8 +77,8 @@ experiment:
       lr: 0.01
       epochs: 30
       batch_size: 1024
-      factors: 64
-      l_w: 0.05
+      factors: [16, 32, 64]
+      l_w: [0.01, 0.05]
       weight_size: (128,64,32)
       node_dropout: (0.1,0.2,0.3)
       message_dropout: (0.1,0.2,0.3)
@@ -90,11 +89,11 @@ experiment:
         save_recs: True
       epochs: 30
       batch_size: 1024
-      mf_factors: 10
-      mlp_factors: 10
+      mf_factors: [5, 10]
+      mlp_factors: [5, 10]
       mlp_hidden_size: (64,32,16)
       lr: 0.01
-      dropout: 0.2
+      dropout: [0.2, 0.4]
       is_mf_train: True
       is_mlp_train: True
 
@@ -102,12 +101,12 @@ experiment:
       meta:
         save_recs: True
       epochs: 10
-      factors: 10
+      factors: [10, 20, 30]
       lr: 0.001
-      bias_regularization: 0
-      user_regularization: 0.0025
-      positive_item_regularization: 0.0025
-      negative_item_regularization: 0.0025
+      bias_regularization: [0, 0.0025]
+      user_regularization: [0, 0.0025]
+      positive_item_regularization: [0, 0.0025]
+      negative_item_regularization: [0, 0.0025]
       update_negative_item_factors: True
       update_users: True
       update_items: True
@@ -116,7 +115,7 @@ experiment:
     PureSVD:
       meta:
         save_recs: True
-      factors: 10
+      factors: [10, 20, 30]
       seed: 42
     
     LightGCN:
@@ -125,9 +124,9 @@ experiment:
       lr: 0.01
       epochs: 30
       batch_size: 1024
-      factors: 64
+      factors: [32, 64]
       l_w: 0.1
-      n_layers: 1
+      n_layers: [1, 2, 3]
       n_fold: 2
       
     VSM:
@@ -141,5 +140,5 @@ experiment:
     Slim:
       meta:
         save_recs: True
-      l1_ratio: 0.005
-      alpha: 0.005
+      l1_ratio: [0, 0.005]
+      alpha: [0, 0.005]
