@@ -1,0 +1,7 @@
+numpy==1.26.4
+hyperopt==0.2.5
+pandas==1.4.1
+PYyaml==6.0.1
+Pillow==10.3.0
+tensorflow==2.16.1
+scikit-learn==1.5.0
