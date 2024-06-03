@@ -16,8 +16,8 @@ The results of the evaluation will be stored in the `external_results/<dataset>/
 Alternatively, you can run the whole pipeline from scratch.
 
 ## Pre-requirements
-In order to reproduce the entire pipeline, it is necessary to install Java 1.7 and Python 3.7 or more, with Keras installed. The experiments have been performed on a machine with Ubuntu 20.04.4 LTS. 
-It is reasonable that more recent versions of both Java and Python are still compatible with the source code. For further details about Python packages required to reproduce our source code, pleas check the [requirements](https://github.com/swapUniba/KARS_NeSy_KGE_with_FOL_rules/blob/main/scripts/req.txt) file.
+In order to reproduce the entire pipeline, it is necessary to install (1) Java 1.7 and (2) Python 3.7 or more, with Keras installed. The experiments have been performed on a machine with Ubuntu 20.04.4 LTS. 
+It is reasonable that more recent versions of both Java and Python are still compatible with the source code. For further details about Python packages required to reproduce our source code, please check the [requirements](https://github.com/swapUniba/KARS_NeSy_KGE_with_FOL_rules/blob/main/scripts/req.txt) file.
 
 ## Pipeline
 The overall pipeline can be split into three main steps:
