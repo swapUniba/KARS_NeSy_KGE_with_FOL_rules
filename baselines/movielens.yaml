@@ -144,3 +144,14 @@ experiment:
         save_recs: True
       l1_ratio: [0, 0.01]
       alpha: [0, 0.01]
+
+
+    # external model, implemented in elliot. see https://github.com/sisinflab/Top-N-Recommendation-Algorithms-A-Quest-for-the-State-of-the-Art/tree/master/elliot
+    # EASER: 
+    #   meta:
+    #     verbose: True
+    #     save_recs: True
+    #     hyper_max_evals: 100
+    #     hyper_opt_alg: tpe
+    #   neighborhood: [-1, 100, 200, 500, 1000]
+    #   l2_norm: [loguniform, 0.01, 32]
