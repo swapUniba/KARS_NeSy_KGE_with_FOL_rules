@@ -1,0 +1,164 @@
+experiment:
+  gpu: 1
+  dataset: lastfm
+  data_config:
+    strategy: fixed
+    train_path: ../data/{}/train2id.tsv
+    test_path: ../data/{}/test2id_gen_baselines.tsv
+    side_information:
+      - dataloader: ItemAttributes
+        attribute_file: ../data/{}/map.tsv
+        features: ../data/{}/features.tsv
+  evaluation:
+    simple_metrics: [MAP, Precision, MAR, Recall, F1, nDCG, Gini, ItemCoverage, EFD, EPC]
+    paired_ttest: False
+    wilcoxon_test: False
+
+  top_k: 10
+  models:
+
+    ItemKNN:
+      meta:
+        save_recs: True
+      neighbors: 100
+      similarity: 'dot'
+      implementation: 'classical'
+
+
+    UserKNN:
+      meta:
+        save_recs: True
+      neighbors: 150
+      similarity: 'dot'
+      implementation: 'euclidean'
+
+    AttributeItemKNN:
+      meta:
+        save_recs: True
+      loader: ItemAttributes
+      neighbors: 150
+      similarity: 'cosine'
+
+    AttributeUserKNN:
+      meta:
+        save_recs: True
+      loader: ItemAttributes
+      neighbors: 150
+      similarity: 'cosine'
+      
+    MultiVAE:
+      meta:
+        save_recs: True
+      epochs: 30
+      batch_size: 512
+      intermediate_dim: 600
+      latent_dim: 200
+      reg_lambda: 0.05
+      lr: 0.01
+      dropout_pkeep: 1
+      seed: 42
+
+    CFGAN:
+      meta:
+        save_recs: True
+      epochs: 30
+      batch_size: 1024
+      factors: 10
+      lr: 0.01
+      l_w: 0.01
+      l_b: 0.01
+      l_gan: 0.1
+      g_epochs: 5
+      d_epochs: 2
+      s_zr: 0.001
+      s_pm: 0.001
+      seed: 42
+
+    NGCF:
+      meta:
+        save_recs: True
+      lr: 0.01
+      epochs: 30
+      batch_size: 1024
+      factors: 64
+      l_w: 0.05
+      weight_size: (128,64,32)
+      node_dropout: (0.1,0.2,0.3)
+      message_dropout: (0.1,0.2,0.3)
+      n_fold: 5
+      seed: 42
+
+    NeuMF:
+      meta:
+        save_recs: True
+      epochs: 30
+      batch_size: 1024
+      mf_factors: 10
+      mlp_factors: 10
+      mlp_hidden_size: (64,32,16)
+      lr: 0.01
+      dropout: 0.2
+      is_mf_train: True
+      is_mlp_train: True
+      seed: 42
+
+    BPRMF:
+      meta:
+        save_recs: True
+      epochs: 30
+      factors: 30
+      lr: 0.001
+      bias_regularization: 0
+      user_regularization: 0.0025
+      positive_item_regularization: 0.0025
+      negative_item_regularization: 0.0025
+      update_negative_item_factors: True
+      update_users: True
+      update_items: True
+      update_bias: True
+      seed: 42
+
+    PureSVD:
+      meta:
+        save_recs: True
+      factors: 10
+      seed: 42
+    
+    LightGCN:
+      meta:
+        save_recs: True
+      lr: 0.01
+      epochs: 30
+      batch_size: 1024
+      factors: 64
+      l_w: 0.1
+      n_layers: 1
+      n_fold: 2
+      seed: 42
+      
+    VSM:
+      meta:
+        save_recs: True
+      loader: ItemAttributes
+      similarity: cosine
+      user_profile: binary
+      item_profile: binary
+      seed: 42
+
+    Slim:
+      meta:
+        save_recs: True
+      l1_ratio: 0.05
+      alpha: 0.05
+      seed: 42
+
+
+    # external model, implemented in elliot. see https://github.com/sisinflab/Top-N-Recommendation-Algorithms-A-Quest-for-the-State-of-the-Art/tree/master/elliot
+    # EASER: 
+    #   meta:
+    #     verbose: True
+    #     save_recs: True
+    #     hyper_max_evals: 100
+    #     hyper_opt_alg: tpe
+    #   neighborhood: 1000
+    #   l2_norm: 1294.92 # [loguniform, 0.01, 32]
