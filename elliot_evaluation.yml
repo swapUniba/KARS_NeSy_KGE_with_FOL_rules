@@ -9,7 +9,6 @@ experiment:
   evaluation:
     simple_metrics: [MAP, Precision, MAR, Recall, F1, nDCG, Gini, ItemCoverage, EFD, EPC]
     paired_ttest: True
-    wilcoxon_test: True
   models:
     RecommendationFolder:
       folder: predictions/kge_fol_rules/movielens/
