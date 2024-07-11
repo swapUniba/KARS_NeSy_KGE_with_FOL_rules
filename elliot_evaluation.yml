@@ -8,7 +8,8 @@ experiment:
     test_path: ../data/{}/amar_test.tsv    # contains only 1s
   evaluation:
     simple_metrics: [MAP, Precision, MAR, Recall, F1, nDCG, Gini, ItemCoverage, EFD, EPC]
-    paired_ttest: True
+    paired_ttest: True  # this flag requires elliot to (a) compute paired ttest for each metric that supports it
+                        #                              (b) provide a file that contains the p-values
   models:
     RecommendationFolder:
       folder: predictions/kge_fol_rules/movielens/
